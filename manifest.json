@@ -1,0 +1,30 @@
+{
+  "name": "Formatomat",
+  "short_name": "Formatomat",
+  "description": "The automat for every format. Convert, pretty-print and minify JSON, YAML and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0e8d2",
+  "theme_color": "#f0e8d2",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/assets/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
