@@ -189,7 +189,7 @@ export function applyLocale(DOM, config, helpers = {}) {
         });
     }
 
-    helpers.afterLocaleApplied?.(ui);
+    helpers.afterLocaleApplied?.();
 }
 
 // Switches locale state + applies to DOM; does NOT call updateUI — caller's responsibility.

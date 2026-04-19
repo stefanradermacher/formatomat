@@ -34,9 +34,10 @@ const DONATE_PAYPAL_URL = "https://paypal.me/formatomat";
 
 const CONFIG = { OWNER_ADDRESS, EMAIL, DONATE_PAYPAL_URL };
 const LOCALE_HELPERS = {
-    afterLocaleApplied(ui) {
+    afterLocaleApplied() {
         updateStatusText();
         if (DOM.indentSelect) {
+            const ui = state.currentLocale.ui;
             const current = DOM.indentSelect.value || state.indent;
             DOM.indentSelect.textContent = "";
             [["2", ui.indent2], ["4", ui.indent4], ["tab", ui.indentTab]].forEach(([val, label]) => {
@@ -407,6 +408,10 @@ function bindEvents() {
 
     DOM.langSelect.addEventListener("change", async (e) => {
         await switchLocale(e.target.value, DOM, CONFIG, LANG_STORAGE_KEY, LOCALE_HELPERS);
+        if (state.autoDetected) {
+            const sample = state.currentLocale?.ui?.[`sample_${state.inputFormat}`] ?? "";
+            setText(inputEditor, sample);
+        }
         renderFormatTabs();
         renderActionButtons();
         updateStatusText();
