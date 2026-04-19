@@ -10,4 +10,5 @@ export const state = {
     lastParsed:   null,          // last successful parse result (object graph)
     lastInputSize: 0,
     lastOutputSize: 0,
+    currentLocale: null,
 };

@@ -34,7 +34,6 @@ const OWNER_ADDRESS = [
 const EMAIL = ["info", "formatomat.net"].join("@");
 
 let DOM;
-let currentLocale = null;
 
 // ─── Utilities ────────────────────────────────────────────────────────────────
 
@@ -84,14 +83,14 @@ function renderTabGroup(container, stateKey) {
         if (id === state[stateKey]) btn.classList.add("active");
         btn.addEventListener("click", () => {
             if (stateKey === "inputFormat") {
-                const oldSample = currentLocale?.ui[`sample_${state.inputFormat}`] ?? "";
+                const oldSample = state.currentLocale?.ui[`sample_${state.inputFormat}`] ?? "";
                 const current   = getText(inputEditor).trim();
                 state.inputFormat = id;
                 state.autoDetected = false;
                 updateStatusText();
                 if (inputEditor) setEditorLanguage(inputEditor, id);
                 if (!current || current === oldSample.trim()) {
-                    const newSample = currentLocale?.ui[`sample_${id}`] ?? "";
+                    const newSample = state.currentLocale?.ui[`sample_${id}`] ?? "";
                     setText(inputEditor, newSample);
                     state.autoDetected = true;
                 }
@@ -122,8 +121,8 @@ function updateActiveTabs() {
 }
 
 function updateStatusText() {
-    if (!currentLocale) return;
-    const ui = currentLocale.ui;
+    if (!state.currentLocale) return;
+    const ui = state.currentLocale.ui;
     if (state.autoDetected && getText(inputEditor).trim()) {
         DOM.inputStatus.textContent = ui.autoDetected;
         DOM.inputStatus.classList.add("auto");
@@ -170,9 +169,9 @@ function renderLanguageSelect() {
 // ─── Locale application ───────────────────────────────────────────────────────
 
 function applyLocale() {
-    if (!currentLocale) return;
-    const ui = currentLocale.ui;
-    document.documentElement.setAttribute("lang", currentLocale.htmlLang || currentLocale.code);
+    if (!state.currentLocale) return;
+    const ui = state.currentLocale.ui;
+    document.documentElement.setAttribute("lang", state.currentLocale.htmlLang || state.currentLocale.code);
 
     document.querySelector(".tagline").textContent = ui.tagline;
     DOM.inputFormatLabel.textContent  = ui.inputFormatLabel;
@@ -333,11 +332,11 @@ function applyLocale() {
 }
 
 async function setLanguage(code) {
-    currentLocale = await loadLocale(code);
-    if (!currentLocale) currentLocale = await loadLocale(FALLBACK_LANG);
-    DOM.langSelect.value = currentLocale.code;
+    state.currentLocale = await loadLocale(code);
+    if (!state.currentLocale) state.currentLocale = await loadLocale(FALLBACK_LANG);
+    DOM.langSelect.value = state.currentLocale.code;
     applyLocale();
-    try { localStorage.setItem(LANG_STORAGE_KEY, currentLocale.code); } catch (_) {}
+    try { localStorage.setItem(LANG_STORAGE_KEY, state.currentLocale.code); } catch (_) {}
 }
 
 // ─── Conversion pipeline ──────────────────────────────────────────────────────
@@ -417,7 +416,7 @@ function updateInputMeta(text) {
         DOM.inputMeta.textContent = "";
         return;
     }
-    DOM.inputMeta.textContent = `${formatBytes(bytes)} · ${lines} ${currentLocale?.ui?.lineUnit || "lines"}`;
+    DOM.inputMeta.textContent = `${formatBytes(bytes)} · ${lines} ${state.currentLocale?.ui?.lineUnit || "lines"}`;
 }
 
 function updateOutputMeta(text, inputRaw) {
@@ -429,7 +428,7 @@ function updateOutputMeta(text, inputRaw) {
         DOM.sizeDelta.textContent = "";
         return;
     }
-    DOM.outputMeta.textContent = `${formatBytes(bytes)} · ${lines} ${currentLocale?.ui?.lineUnit || "lines"}`;
+    DOM.outputMeta.textContent = `${formatBytes(bytes)} · ${lines} ${state.currentLocale?.ui?.lineUnit || "lines"}`;
 
     if (inputRaw) {
         const inBytes = new Blob([inputRaw]).size;
@@ -459,10 +458,10 @@ function showError(err) {
     if (errList) {
         errList.forEach((e, i) => {
             if (i > 0) DOM.inputError.appendChild(document.createTextNode("\n"));
-            const locationText = t(currentLocale?.ui?.errorAt || "line {line}, col {col}", {
+            const locationText = t(state.currentLocale?.ui?.errorAt || "line {line}, col {col}", {
                 line: e.line, col: e.column ?? "?",
             });
-            const msg = (e.code && currentLocale?.ui?.jsonErrors?.[e.code]) || e.message;
+            const msg = (e.code && state.currentLocale?.ui?.jsonErrors?.[e.code]) || e.message;
             DOM.inputError.appendChild(document.createTextNode("[!] " + msg + " — "));
             const btn = document.createElement("button");
             btn.type = "button";
@@ -587,8 +586,8 @@ function bindEvents() {
         DOM.pageWrapper.classList.toggle("is-expanded", expanding);
         if (!expanding) DOM.pageWrapper.scrollTop = 0;
         const label = expanding
-            ? (currentLocale?.ui?.tooltipCollapse || "Collapse")
-            : (currentLocale?.ui?.tooltipExpand   || "Expand");
+            ? (state.currentLocale?.ui?.tooltipCollapse || "Collapse")
+            : (state.currentLocale?.ui?.tooltipExpand   || "Expand");
         DOM.expandInputBtn.setAttribute("aria-label", label);
         DOM.expandInputBtn.setAttribute("data-tooltip", label);
         DOM.expandInputBtn.querySelector("svg").innerHTML = expanding
@@ -706,7 +705,7 @@ async function init() {
     outputEditor = createOutputEditor(DOM.outputEditorWrap, state.outputFormat);
 
     // Load sample data on first run
-    setText(inputEditor, currentLocale.ui.sample_json || "");
+    setText(inputEditor, state.currentLocale.ui.sample_json || "");
     state.autoDetected = true;
 
     bindEvents();
