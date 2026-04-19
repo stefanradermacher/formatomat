@@ -13,7 +13,7 @@ export const DEFAULT_LIGHT_THEME = "brass";
 export const DEFAULT_DARK_THEME  = "copper";
 
 export function applyTheme(themeKey, DOM) {
-    if (!ALLOWED_THEMES.has(themeKey)) themeKey = DEFAULT_DARK_THEME;
+    if (!ALLOWED_THEMES.has(themeKey)) themeKey = DEFAULT_LIGHT_THEME;
     const theme = THEMES[themeKey];
     if (!theme) return;
     document.documentElement.setAttribute("data-theme", themeKey);
