@@ -29,8 +29,8 @@ const OWNER_ADDRESS = [
     "50679 Köln",
     "Deutschland",
 ];
-const EMAIL = ["info", "formatomat.net"].join("@");
-const DONATE_PAYPAL_URL = "https://paypal.me/formatomat";
+const EMAIL = ["formatomat", "stefanradermacher.com"].join("@");
+const DONATE_PAYPAL_URL = "https://paypal.me/srprojects";
 
 const CONFIG = { OWNER_ADDRESS, EMAIL, DONATE_PAYPAL_URL };
 const LOCALE_HELPERS = {

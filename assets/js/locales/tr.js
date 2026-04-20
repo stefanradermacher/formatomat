@@ -65,8 +65,8 @@ export default {
         footerSupportLink: "buraya tıklayın",
 
         supportTitle:      "Formatomat'ı Destekle",
-        supportIntro:      "Formatomat özel, ticari olmayan bir yan projedir ve her zaman ücretsiz kalacaktır.",
-        supportP1:         "Geliştirme ve barındırma maliyetlerini desteklemek isterseniz küçük bir bağış yapabilirsiniz.",
+        supportIntro:      "Formatomat, ticari olmayan bir hobi projesidir ve senin için ücretsiz kalmaya devam eder.",
+        supportP1:         "Geliştirmeyi ve barındırmayı gönüllü bir bağışla desteklemek istersen, bunu burada yapabilirsin.",
         supportPaypalLabel: "PayPal ile bağış yap",
 
         aboutLink:         "Hakkında",

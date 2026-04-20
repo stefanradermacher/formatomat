@@ -65,8 +65,8 @@ export default {
         footerSupportLink: "cliquez ici",
 
         supportTitle:      "Soutenir Formatomat",
-        supportIntro:      "Formatomat est un projet privé et non commercial, et restera toujours gratuit.",
-        supportP1:         "Si vous souhaitez soutenir son développement ou les coûts d'hébergement, vous pouvez faire un petit don.",
+        supportIntro:      "Formatomat est un projet hobby non commercial et reste gratuit pour toi.",
+        supportP1:         "Si tu souhaites soutenir le développement et l'hébergement avec un don volontaire, tu peux le faire ici.",
         supportPaypalLabel: "Faire un don via PayPal",
 
         aboutLink:         "À propos",
