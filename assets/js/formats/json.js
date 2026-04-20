@@ -40,6 +40,15 @@ export default {
             err.errors = parseErrors;
             throw err;
         }
+        // If the result is a string that is itself valid JSON (double-encoded),
+        // parse it one more level so pasting an escaped JSON string value works.
+        if (typeof result === "string") {
+            const inner = [];
+            const decoded = jsoncParse(result, inner, { disallowComments: true });
+            if (inner.length === 0 && decoded !== null && typeof decoded === "object") {
+                return decoded;
+            }
+        }
         return result;
     },
 
