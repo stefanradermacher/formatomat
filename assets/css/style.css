@@ -239,7 +239,7 @@ html, body {
 }
 
 body {
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 14px;
     line-height: 1.5;
     background: var(--bg);
@@ -312,7 +312,7 @@ button, select, input, textarea {
 .logo-icon { width: 52px; height: 52px; flex-shrink: 0; }
 
 .logo-text {
-    font-family: var(--font-display);
+    font-family: var(--font-display), monospace;
     font-size: 2.4rem;
     font-weight: normal;
     letter-spacing: 0.08em;
@@ -347,7 +347,7 @@ button, select, input, textarea {
     border: 2px solid var(--border-strong);
     padding: 8px 32px 8px 12px;
     border-radius: 2px;
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 0.85rem;
     cursor: pointer;
     box-shadow: var(--shadow);
@@ -400,7 +400,7 @@ button, select, input, textarea {
 }
 
 .format-bar-label {
-    font-family: var(--font-display);
+    font-family: var(--font-display), monospace;
     font-size: 1.1rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -432,7 +432,7 @@ button, select, input, textarea {
     color: var(--fg-dim);
     border: 2px solid var(--border);
     padding: 6px 14px;
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -516,7 +516,7 @@ button, select, input, textarea {
 }
 
 .panel-label {
-    font-family: var(--font-display);
+    font-family: var(--font-display), monospace;
     font-size: 1rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -626,7 +626,7 @@ button, select, input, textarea {
     color: var(--fg-dim);
 }
 
-.panel-meta { font-family: var(--font-mono); }
+.panel-meta { font-family: var(--font-mono), monospace; }
 
 .error-location-btn {
     background: none;
@@ -643,7 +643,7 @@ button, select, input, textarea {
     background: rgba(216, 85, 69, 0.10);
     border-bottom: 1px solid var(--danger);
     color: var(--danger);
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 0.75rem;
     padding: 6px 12px;
     white-space: pre-wrap;
@@ -675,7 +675,7 @@ button, select, input, textarea {
 }
 
 .control-label {
-    font-family: var(--font-display);
+    font-family: var(--font-display), monospace;
     font-size: 0.9rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -693,7 +693,7 @@ button, select, input, textarea {
     color: var(--fg-dim);
     border: 2px solid var(--border-strong);
     padding: 8px 10px;
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.05em;
@@ -878,7 +878,7 @@ button, select, input, textarea {
 }
 
 .modal-dialog h2 {
-    font-family: var(--font-display);
+    font-family: var(--font-display), monospace;
     font-size: 1.6rem;
     font-weight: normal;
     letter-spacing: 0.08em;
@@ -891,7 +891,7 @@ button, select, input, textarea {
 
 .modal-dialog p {
     margin: 0 0 10px;
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 0.85rem;
     line-height: 1.6;
 }
@@ -911,7 +911,7 @@ button, select, input, textarea {
     margin-top: 20px;
     padding-top: 14px;
     border-top: 1px solid var(--border);
-    font-family: var(--font-mono);
+    font-family: var(--font-mono), monospace;
     font-size: 0.72rem;
     color: var(--fg-dim);
     line-height: 1.7;
