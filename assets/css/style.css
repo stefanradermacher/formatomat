@@ -232,6 +232,11 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+::selection {
+    background: var(--accent);
+    color: var(--bg);
+}
+
 html, body {
     margin: 0;
     padding: 0;
