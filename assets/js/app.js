@@ -16,6 +16,7 @@ import {
     setLanguage as setEditorLanguage,
     focusAndMoveTo,
 } from "./editor.js";
+import { enableExtensionImport } from "./extension-import.js";
 
 let inputEditor, outputEditor;
 
@@ -365,6 +366,26 @@ async function pasteFromClipboard() {
     }
 }
 
+// Load content pushed in by the companion extension. Mirrors the paste path
+// (setText → runConversion, which handles detection/validation). `format` is
+// an unreliable hint: honour it as a manual pre-selection only when it names a
+// known format, otherwise fall back to the existing auto-detection.
+async function loadFromExtension(text, format) {
+    if (format && format !== "auto" && FORMATS[format]) {
+        state.inputFormat = format;
+        state.outputFormat = format;
+        state.autoDetected = false;
+        updateActiveTabs();
+        renderActionButtons();
+        setEditorLanguage(inputEditor, state.inputFormat);
+        setEditorLanguage(outputEditor, state.outputFormat);
+    } else {
+        state.autoDetected = true;
+    }
+    setText(inputEditor, text);
+    await runConversion();
+}
+
 async function downloadOutput() {
     const text = getText(outputEditor);
     if (!text) return;
@@ -562,6 +583,10 @@ async function init() {
 
     bindEvents();
     await runConversion();
+
+    // Listen for content pushed in by the companion browser extension, then
+    // signal readiness per the postMessage contract.
+    enableExtensionImport(loadFromExtension);
 }
 
 // ─── Global error UI ──────────────────────────────────────────────────────────
@@ -577,7 +602,7 @@ function showFatalError(err) {
 window.addEventListener("error", (event) => showFatalError(event.error || event.message));
 window.addEventListener("unhandledrejection", (event) => showFatalError(event.reason));
 
-if ("serviceWorker" in navigator) {
+if ("serviceWorker" in navigator && !window.Capacitor) {
     navigator.serviceWorker.register("/sw.js").catch(dbg);
 }
 

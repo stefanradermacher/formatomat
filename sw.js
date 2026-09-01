@@ -1,4 +1,4 @@
-const VERSION = "v1";
+const VERSION = "v2";
 const CACHE = `formatomat-${VERSION}`;
 
 const PRECACHE = [
@@ -13,6 +13,7 @@ const PRECACHE = [
     "/assets/js/modals.js",
     "/assets/js/formats.js",
     "/assets/js/editor.js",
+    "/assets/js/extension-import.js",
     "/assets/js/vendor/codemirror.bundle.js",
     "/assets/js/formats/json.js",
     "/assets/js/formats/yaml.js",
