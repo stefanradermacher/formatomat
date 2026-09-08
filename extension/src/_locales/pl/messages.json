@@ -1,0 +1,38 @@
+{
+  "app_name": {
+    "message": "Wyślij do Formatomat"
+  },
+  "app_desc": {
+    "message": "Wysyła dane strukturalne (np. JSON lub YAML) z bieżącej strony do Formatomat."
+  },
+  "send_to_formatomat": {
+    "message": "Wyślij do Formatomat"
+  },
+  "opt_title": {
+    "message": "Formatomat – Docelowy adres URL"
+  },
+  "opt_subtitle": {
+    "message": "Dokąd trafia zaznaczony lub wykryty kod."
+  },
+  "opt_label_url": {
+    "message": "Docelowy adres URL"
+  },
+  "opt_save": {
+    "message": "Zapisz"
+  },
+  "opt_reset": {
+    "message": "Przywróć domyślne"
+  },
+  "opt_saved": {
+    "message": "Zapisano."
+  },
+  "opt_reset_done": {
+    "message": "Przywrócono domyślne."
+  },
+  "opt_invalid_url": {
+    "message": "Wpisz pełny adres URL http(s)."
+  },
+  "opt_hint": {
+    "message": "Do testów lokalnych wpisz np. http://localhost:5173/ lub http://127.0.0.1:8000/ — te hosty są już dozwolone. Inny host deweloperski trzeba dodatkowo dodać w manifest.json w host_permissions i content_scripts.matches. Puste pole = domyślnie (https://formatomat.net/)."
+  }
+}

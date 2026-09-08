@@ -1,10 +1,11 @@
-const VERSION = "v2";
+const VERSION = "v3";
 const CACHE = `formatomat-${VERSION}`;
 
 const PRECACHE = [
     "/",
     "/impressum.html",
     "/datenschutz.html",
+    "/datenschutz-extension.html",
     "/assets/css/style.css",
     "/assets/js/app.js",
     "/assets/js/state.js",
@@ -14,6 +15,7 @@ const PRECACHE = [
     "/assets/js/formats.js",
     "/assets/js/editor.js",
     "/assets/js/extension-import.js",
+    "/assets/js/extension-hint.js",
     "/assets/js/vendor/codemirror.bundle.js",
     "/assets/js/formats/json.js",
     "/assets/js/formats/yaml.js",

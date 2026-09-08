@@ -74,6 +74,11 @@ export default {
         impressumLink:     "Legal Notice",
         privacyLink:       "Privacy",
 
+        extensionLink:     "Chrome extension",
+        extensionHintText: "Tip: The Formatomat extension sends code straight from any page to Formatomat.",
+        extensionHintLink: "Get the extension →",
+        extensionHintDismiss: "Dismiss hint",
+
         aboutTitle:        "About Formatomat",
         aboutP1:           "Formatomat is a fast, privacy-friendly tool for converting, pretty-printing and minifying structured data formats. All processing happens locally in your browser — your data never leaves your device.",
         aboutP2:           "Supported formats: JSON, YAML, XML, TOML, INI and PHP. More formats are planned.",

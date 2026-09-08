@@ -1,0 +1,38 @@
+{
+  "app_name": {
+    "message": "An Formatomat senden"
+  },
+  "app_desc": {
+    "message": "Sendet strukturierte Daten (etwa JSON oder YAML) von der aktuellen Seite an Formatomat."
+  },
+  "send_to_formatomat": {
+    "message": "An Formatomat senden"
+  },
+  "opt_title": {
+    "message": "Formatomat – Ziel-URL"
+  },
+  "opt_subtitle": {
+    "message": "Wohin der markierte oder erkannte Code geschickt wird."
+  },
+  "opt_label_url": {
+    "message": "Ziel-URL"
+  },
+  "opt_save": {
+    "message": "Speichern"
+  },
+  "opt_reset": {
+    "message": "Auf Standard zurücksetzen"
+  },
+  "opt_saved": {
+    "message": "Gespeichert."
+  },
+  "opt_reset_done": {
+    "message": "Auf Standard zurückgesetzt."
+  },
+  "opt_invalid_url": {
+    "message": "Bitte eine vollständige http(s)-URL angeben."
+  },
+  "opt_hint": {
+    "message": "Fürs lokale Testen z. B. http://localhost:5173/ oder http://127.0.0.1:8000/ eintragen – diese Hosts sind bereits freigegeben. Ein anderer Dev-Host muss zusätzlich in manifest.json unter host_permissions und content_scripts.matches ergänzt werden. Leeres Feld = Standard (https://formatomat.net/)."
+  }
+}

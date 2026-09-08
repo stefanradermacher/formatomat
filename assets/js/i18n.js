@@ -113,6 +113,7 @@ export function applyLocale(DOM, config, helpers = {}) {
 
     if (DOM.impressumLink && ui.impressumLink) DOM.impressumLink.textContent = ui.impressumLink;
     if (DOM.privacyLink   && ui.privacyLink)   DOM.privacyLink.textContent   = ui.privacyLink;
+    if (DOM.extensionLink && ui.extensionLink) DOM.extensionLink.textContent = ui.extensionLink;
 
     if (DOM.aboutModalTitle && ui.aboutTitle) DOM.aboutModalTitle.textContent = ui.aboutTitle;
     if (DOM.aboutModalBody) {

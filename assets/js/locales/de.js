@@ -73,6 +73,11 @@ export default {
         impressumLink:     "Impressum",
         privacyLink:       "Datenschutz",
 
+        extensionLink:     "Chrome-Erweiterung",
+        extensionHintText: "Tipp: Mit der Formatomat-Erweiterung sendest du Code direkt von jeder Seite an den Formatomat.",
+        extensionHintLink: "Zur Erweiterung →",
+        extensionHintDismiss: "Hinweis schließen",
+
         aboutTitle:        "Über den Formatomat",
         aboutP1:           "Der Formatomat ist ein schnelles, datenschutzfreundliches Werkzeug zum Konvertieren, Schönformatieren und Verkleinern strukturierter Datenformate. Alle Verarbeitung findet lokal in deinem Browser statt — deine Daten verlassen dein Gerät nicht.",
         aboutP2:           "Unterstützte Formate: JSON, YAML, XML, TOML, INI und PHP.",

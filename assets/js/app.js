@@ -17,6 +17,7 @@ import {
     focusAndMoveTo,
 } from "./editor.js";
 import { enableExtensionImport } from "./extension-import.js";
+import { renderExtensionHint, markExtensionDetected } from "./extension-hint.js";
 
 let inputEditor, outputEditor;
 
@@ -33,10 +34,20 @@ const OWNER_ADDRESS = [
 const EMAIL = ["formatomat", "stefanradermacher.com"].join("@");
 const DONATE_PAYPAL_URL = "https://paypal.me/srprojects";
 
-const CONFIG = { OWNER_ADDRESS, EMAIL, DONATE_PAYPAL_URL };
+// Chrome Web Store listing of the companion extension. Empty until the listing
+// is published — while empty, footer link and hint banner stay hidden rather
+// than pointing at a dead URL. Form:
+// https://chromewebstore.google.com/detail/<slug>/<EXTENSION_ID>
+const STORE_URL = "https://chromewebstore.google.com/detail/pgiigalknemaojkeidbfpakalhdjjmic";
+
+const CONFIG = { OWNER_ADDRESS, EMAIL, DONATE_PAYPAL_URL, STORE_URL };
 const LOCALE_HELPERS = {
     afterLocaleApplied() {
         updateStatusText();
+        renderExtensionHint(DOM.extensionHint, {
+            storeUrl: STORE_URL,
+            ui: state.currentLocale.ui,
+        });
         if (DOM.indentSelect) {
             const ui = state.currentLocale.ui;
             const current = DOM.indentSelect.value || state.indent;
@@ -371,6 +382,9 @@ async function pasteFromClipboard() {
 // an unreliable hint: honour it as a manual pre-selection only when it names a
 // known format, otherwise fall back to the existing auto-detection.
 async function loadFromExtension(text, format) {
+    // Content arriving here proves the extension is installed — retire the hint.
+    markExtensionDetected(DOM.extensionHint);
+
     if (format && format !== "auto" && FORMATS[format]) {
         state.inputFormat = format;
         state.outputFormat = format;
@@ -546,6 +560,9 @@ async function init() {
         footerSupport:    document.getElementById("footerSupport"),
         impressumLink:    document.getElementById("impressumLink"),
         privacyLink:      document.getElementById("privacyLink"),
+        extensionLink:      document.getElementById("extensionLink"),
+        extensionFooterItem:document.getElementById("extensionFooterItem"),
+        extensionHint:      document.getElementById("extensionHint"),
 
         supportModal:      document.getElementById("supportModal"),
         supportModalTitle: document.getElementById("supportModalTitle"),
@@ -560,6 +577,11 @@ async function init() {
         impressumModalTitle: document.getElementById("impressumModalTitle"),
         impressumModalBody:  document.getElementById("impressumModalBody"),
     };
+
+    if (STORE_URL && DOM.extensionLink && DOM.extensionFooterItem) {
+        DOM.extensionLink.href = STORE_URL;
+        DOM.extensionFooterItem.hidden = false;
+    }
 
     populateThemeSelect();
     populateLanguageSelect();

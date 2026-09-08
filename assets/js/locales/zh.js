@@ -74,6 +74,11 @@ export default {
         impressumLink:     "法律信息",
         privacyLink:       "隐私",
 
+        extensionLink:     "Chrome 扩展程序",
+        extensionHintText: "提示：使用 Formatomat 扩展程序，可从任何页面直接把代码发送到 Formatomat。",
+        extensionHintLink: "获取扩展程序 →",
+        extensionHintDismiss: "关闭提示",
+
         aboutTitle:        "关于 Formatomat",
         aboutP1:           "Formatomat 是一款快速、注重隐私的工具，用于转换、美化和压缩结构化数据。所有处理均在您的浏览器本地进行 — 您的数据永远不会离开您的设备。",
         aboutP2:           "支持的格式：JSON、YAML、XML、TOML、INI 和 PHP。",

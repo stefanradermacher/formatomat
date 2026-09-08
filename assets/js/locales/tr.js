@@ -74,6 +74,11 @@ export default {
         impressumLink:     "Yasal bilgi",
         privacyLink:       "Gizlilik",
 
+        extensionLink:     "Chrome uzantısı",
+        extensionHintText: "İpucu: Formatomat uzantısı, kodu herhangi bir sayfadan doğrudan Formatomat'a gönderir.",
+        extensionHintLink: "Uzantıyı edin →",
+        extensionHintDismiss: "İpucunu kapat",
+
         aboutTitle:        "Formatomat Hakkında",
         aboutP1:           "Formatomat, yapılandırılmış verileri dönüştürmek, biçimlendirmek ve sıkıştırmak için hızlı ve gizliliğe saygılı bir araçtır. Tüm işlemler tarayıcınızda yerel olarak gerçekleşir — verileriniz cihazınızı terk etmez.",
         aboutP2:           "Desteklenen formatlar: JSON, YAML, XML, TOML, INI ve PHP.",

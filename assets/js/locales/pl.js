@@ -74,6 +74,11 @@ export default {
         impressumLink:     "Informacje prawne",
         privacyLink:       "Prywatność",
 
+        extensionLink:     "Rozszerzenie Chrome",
+        extensionHintText: "Wskazówka: rozszerzenie Formatomat wysyła kod do Formatomat bezpośrednio z dowolnej strony.",
+        extensionHintLink: "Pobierz rozszerzenie →",
+        extensionHintDismiss: "Zamknij wskazówkę",
+
         aboutTitle:        "O Formatomacie",
         aboutP1:           "Formatomat to szybkie narzędzie dbające o prywatność, służące do konwertowania, formatowania i kompresowania danych strukturalnych. Całe przetwarzanie odbywa się lokalnie w Twojej przeglądarce — Twoje dane nigdy nie opuszczają urządzenia.",
         aboutP2:           "Obsługiwane formaty: JSON, YAML, XML, TOML, INI i PHP.",

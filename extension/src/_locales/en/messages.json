@@ -1,0 +1,50 @@
+{
+  "app_name": {
+    "message": "Send to Formatomat",
+    "description": "Extension name shown in the toolbar and store."
+  },
+  "app_desc": {
+    "message": "Sends structured data (such as JSON or YAML) from the current page to Formatomat.",
+    "description": "Extension description."
+  },
+  "send_to_formatomat": {
+    "message": "Send to Formatomat",
+    "description": "Toolbar tooltip and context-menu label."
+  },
+  "opt_title": {
+    "message": "Formatomat – Target URL",
+    "description": "Options page heading / document title."
+  },
+  "opt_subtitle": {
+    "message": "Where the selected or detected code is sent.",
+    "description": "Short line under the heading."
+  },
+  "opt_label_url": {
+    "message": "Target URL",
+    "description": "Label for the target URL field."
+  },
+  "opt_save": {
+    "message": "Save",
+    "description": "Save button."
+  },
+  "opt_reset": {
+    "message": "Reset to default",
+    "description": "Reset button."
+  },
+  "opt_saved": {
+    "message": "Saved.",
+    "description": "Status after saving."
+  },
+  "opt_reset_done": {
+    "message": "Reset to default.",
+    "description": "Status after resetting."
+  },
+  "opt_invalid_url": {
+    "message": "Please enter a full http(s) URL.",
+    "description": "Status when the URL is not http(s)."
+  },
+  "opt_hint": {
+    "message": "For local testing, enter e.g. http://localhost:5173/ or http://127.0.0.1:8000/ — these hosts are already allowed. A different dev host must also be added to manifest.json under host_permissions and content_scripts.matches. Empty field = default (https://formatomat.net/).",
+    "description": "Help text about local testing and dev hosts."
+  }
+}

@@ -74,6 +74,11 @@ export default {
         impressumLink:     "法的情報",
         privacyLink:       "プライバシー",
 
+        extensionLink:     "Chrome 拡張機能",
+        extensionHintText: "ヒント: Formatomat 拡張機能を使うと、どのページからでもコードを直接 Formatomat に送れます。",
+        extensionHintLink: "拡張機能を入手 →",
+        extensionHintDismiss: "ヒントを閉じる",
+
         aboutTitle:        "Formatomat について",
         aboutP1:           "Formatomat は、構造化データを変換・整形・圧縮するための高速でプライバシーに配慮したツールです。すべての処理はブラウザ内でローカルに行われます — データがデバイス外に出ることはありません。",
         aboutP2:           "対応フォーマット：JSON、YAML、XML、TOML、INI および PHP。",

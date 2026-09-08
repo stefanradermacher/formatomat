@@ -1,0 +1,38 @@
+{
+  "app_name": {
+    "message": "Formatomat に送信"
+  },
+  "app_desc": {
+    "message": "現在のページの構造化データ（JSON や YAML など）を Formatomat に送信します。"
+  },
+  "send_to_formatomat": {
+    "message": "Formatomat に送信"
+  },
+  "opt_title": {
+    "message": "Formatomat – 送信先 URL"
+  },
+  "opt_subtitle": {
+    "message": "選択または検出したコードの送信先。"
+  },
+  "opt_label_url": {
+    "message": "送信先 URL"
+  },
+  "opt_save": {
+    "message": "保存"
+  },
+  "opt_reset": {
+    "message": "既定値に戻す"
+  },
+  "opt_saved": {
+    "message": "保存しました。"
+  },
+  "opt_reset_done": {
+    "message": "既定値に戻しました。"
+  },
+  "opt_invalid_url": {
+    "message": "http(s) の完全な URL を入力してください。"
+  },
+  "opt_hint": {
+    "message": "ローカルテストでは、例えば http://localhost:5173/ や http://127.0.0.1:8000/ を入力してください。これらのホストはすでに許可されています。別の開発用ホストは、manifest.json の host_permissions と content_scripts.matches にも追加する必要があります。空欄の場合は既定（https://formatomat.net/）になります。"
+  }
+}

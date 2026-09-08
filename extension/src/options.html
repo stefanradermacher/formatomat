@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title data-i18n="opt_title">Formatomat</title>
+  <style>
+    :root { --copper: #d9924a; --panel: #1a1410; --line: #e8dcc8; }
+    body {
+      font: 14px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      color: #1a1410; background: #faf7f2; margin: 0; padding: 28px;
+    }
+    .wrap { max-width: 560px; margin: 0 auto; }
+    h1 { font-size: 18px; margin: 0 0 4px; }
+    p.sub { margin: 0 0 20px; color: #6b5d4d; }
+    label { display: block; font-weight: 600; margin-bottom: 6px; }
+    input[type="url"] {
+      width: 100%; box-sizing: border-box; padding: 9px 11px;
+      border: 1px solid #cdbfa8; border-radius: 6px; font-size: 14px; background: #fff;
+    }
+    input[type="url"]:focus { outline: 2px solid var(--copper); border-color: var(--copper); }
+    .row { display: flex; gap: 10px; margin-top: 14px; align-items: center; flex-wrap: wrap; }
+    button { padding: 9px 16px; border: 0; border-radius: 6px; font-size: 14px; font-weight: 600; cursor: pointer; }
+    #save { background: var(--copper); color: #fff; }
+    #reset { background: #ece4d6; color: #4a3f30; }
+    #status { min-height: 18px; margin-top: 12px; font-weight: 600; }
+    .hint {
+      margin-top: 22px; padding: 12px 14px; background: #f1ebe0;
+      border-left: 3px solid var(--copper); border-radius: 4px; color: #5a4d3c;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 data-i18n="opt_title">Formatomat</h1>
+    <p class="sub" data-i18n="opt_subtitle"></p>
+
+    <label for="url" data-i18n="opt_label_url"></label>
+    <input id="url" type="url" placeholder="https://formatomat.net/" autocomplete="off" spellcheck="false">
+
+    <div class="row">
+      <button id="save" data-i18n="opt_save"></button>
+      <button id="reset" data-i18n="opt_reset"></button>
+    </div>
+    <div id="status"></div>
+
+    <div class="hint" data-i18n="opt_hint"></div>
+  </div>
+  <script src="options.js"></script>
+</body>
+</html>

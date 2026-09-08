@@ -88,6 +88,9 @@
     </header>
 
     <main class="main">
+        <!-- Extension hint (Chromium only, filled + shown by extension-hint.js) -->
+        <div class="extension-hint" id="extensionHint" hidden></div>
+
         <!-- Format selector -->
         <div class="format-bar" role="tablist" aria-label="Input format">
             <div class="format-bar-label" id="inputFormatLabel">Input</div>
@@ -203,6 +206,10 @@
             <span aria-hidden="true"> · </span>
             <a href="/datenschutz.html" id="privacyLink"></a>
             <span aria-hidden="true"> · </span>
+            <span id="extensionFooterItem" hidden>
+                <a id="extensionLink" target="_blank" rel="noopener"></a>
+                <span aria-hidden="true"> · </span>
+            </span>
             <a href="https://github.com/stefanradermacher/formatomat" target="_blank" rel="noopener">GitHub</a>
             <span aria-hidden="true"> · </span>
             <span>&copy; 2026 Stefan Radermacher</span>

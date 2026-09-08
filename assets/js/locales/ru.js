@@ -74,6 +74,11 @@ export default {
         impressumLink:     "Правовая информация",
         privacyLink:       "Конфиденциальность",
 
+        extensionLink:     "Расширение для Chrome",
+        extensionHintText: "Совет: расширение Formatomat отправляет код в Formatomat прямо с любой страницы.",
+        extensionHintLink: "Установить расширение →",
+        extensionHintDismiss: "Закрыть подсказку",
+
         aboutTitle:        "О Formatomat",
         aboutP1:           "Formatomat — быстрый инструмент с защитой конфиденциальности для конвертации, форматирования и минификации структурированных данных. Вся обработка происходит локально в браузере — ваши данные никогда не покидают устройство.",
         aboutP2:           "Поддерживаемые форматы: JSON, YAML, XML, TOML, INI и PHP.",

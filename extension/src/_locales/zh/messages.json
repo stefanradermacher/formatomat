@@ -1,0 +1,38 @@
+{
+  "app_name": {
+    "message": "发送到 Formatomat"
+  },
+  "app_desc": {
+    "message": "将当前页面的结构化数据（如 JSON 或 YAML）发送到 Formatomat。"
+  },
+  "send_to_formatomat": {
+    "message": "发送到 Formatomat"
+  },
+  "opt_title": {
+    "message": "Formatomat – 目标 URL"
+  },
+  "opt_subtitle": {
+    "message": "所选或检测到的代码将发送到的位置。"
+  },
+  "opt_label_url": {
+    "message": "目标 URL"
+  },
+  "opt_save": {
+    "message": "保存"
+  },
+  "opt_reset": {
+    "message": "重置为默认"
+  },
+  "opt_saved": {
+    "message": "已保存。"
+  },
+  "opt_reset_done": {
+    "message": "已重置为默认。"
+  },
+  "opt_invalid_url": {
+    "message": "请输入完整的 http(s) URL。"
+  },
+  "opt_hint": {
+    "message": "本地测试时，请输入例如 http://localhost:5173/ 或 http://127.0.0.1:8000/ — 这些主机已被允许。其他开发主机还需在 manifest.json 的 host_permissions 和 content_scripts.matches 中添加。留空 = 默认（https://formatomat.net/）。"
+  }
+}

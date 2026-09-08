@@ -12,6 +12,13 @@ A fast, privacy-friendly format converter, pretty-printer and minifier. No track
 - **PWA** — installable and works fully offline
 - **No framework, no build step** — plain HTML, CSS and vanilla JavaScript
 
+## Browser extension
+
+The companion Chrome extension „An Formatomat senden" sends code from any page
+straight into Formatomat. Its source lives in [`extension/`](extension) —
+plain MV3, no dependencies. See [extension/README.md](extension/README.md) for
+development and packaging.
+
 ## License
 
 MIT — © 2026 Stefan Radermacher

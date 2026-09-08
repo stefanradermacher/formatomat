@@ -1,0 +1,38 @@
+{
+  "app_name": {
+    "message": "Formatomat'a gönder"
+  },
+  "app_desc": {
+    "message": "Geçerli sayfadaki yapılandırılmış verileri (JSON veya YAML gibi) Formatomat'a gönderir."
+  },
+  "send_to_formatomat": {
+    "message": "Formatomat'a gönder"
+  },
+  "opt_title": {
+    "message": "Formatomat – Hedef URL"
+  },
+  "opt_subtitle": {
+    "message": "Seçilen veya algılanan kodun nereye gönderileceği."
+  },
+  "opt_label_url": {
+    "message": "Hedef URL"
+  },
+  "opt_save": {
+    "message": "Kaydet"
+  },
+  "opt_reset": {
+    "message": "Varsayılana sıfırla"
+  },
+  "opt_saved": {
+    "message": "Kaydedildi."
+  },
+  "opt_reset_done": {
+    "message": "Varsayılana sıfırlandı."
+  },
+  "opt_invalid_url": {
+    "message": "Lütfen tam bir http(s) URL'si girin."
+  },
+  "opt_hint": {
+    "message": "Yerel test için örn. http://localhost:5173/ veya http://127.0.0.1:8000/ girin — bu host'lar zaten izinlidir. Farklı bir geliştirme host'u ayrıca manifest.json içinde host_permissions ve content_scripts.matches altına eklenmelidir. Boş alan = varsayılan (https://formatomat.net/)."
+  }
+}

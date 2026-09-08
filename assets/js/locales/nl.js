@@ -74,6 +74,11 @@ export default {
         impressumLink:     "Juridische informatie",
         privacyLink:       "Privacy",
 
+        extensionLink:     "Chrome-extensie",
+        extensionHintText: "Tip: met de Formatomat-extensie stuur je code vanaf elke pagina rechtstreeks naar Formatomat.",
+        extensionHintLink: "Extensie ophalen →",
+        extensionHintDismiss: "Melding sluiten",
+
         aboutTitle:        "Over Formatomat",
         aboutP1:           "Formatomat is een snel en privacyvriendelijk hulpmiddel voor het converteren, opmaken en comprimeren van gestructureerde gegevens. Alle verwerking vindt lokaal in uw browser plaats — uw gegevens verlaten uw apparaat nooit.",
         aboutP2:           "Ondersteunde formaten: JSON, YAML, XML, TOML, INI en PHP.",

@@ -1,0 +1,38 @@
+{
+  "app_name": {
+    "message": "Надіслати до Formatomat"
+  },
+  "app_desc": {
+    "message": "Надсилає структуровані дані (наприклад, JSON або YAML) з поточної сторінки до Formatomat."
+  },
+  "send_to_formatomat": {
+    "message": "Надіслати до Formatomat"
+  },
+  "opt_title": {
+    "message": "Formatomat — цільовий URL"
+  },
+  "opt_subtitle": {
+    "message": "Куди надсилається виділений або виявлений код."
+  },
+  "opt_label_url": {
+    "message": "Цільовий URL"
+  },
+  "opt_save": {
+    "message": "Зберегти"
+  },
+  "opt_reset": {
+    "message": "Скинути до типового"
+  },
+  "opt_saved": {
+    "message": "Збережено."
+  },
+  "opt_reset_done": {
+    "message": "Скинуто до типового."
+  },
+  "opt_invalid_url": {
+    "message": "Введіть повний URL із http(s)."
+  },
+  "opt_hint": {
+    "message": "Для локального тестування введіть, наприклад, http://localhost:5173/ або http://127.0.0.1:8000/ — ці хости вже дозволені. Інший хост для розробки потрібно додатково додати в manifest.json у host_permissions та content_scripts.matches. Порожнє поле = типове значення (https://formatomat.net/)."
+  }
+}

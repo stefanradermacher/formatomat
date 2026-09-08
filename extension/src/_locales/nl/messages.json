@@ -1,0 +1,38 @@
+{
+  "app_name": {
+    "message": "Naar Formatomat sturen"
+  },
+  "app_desc": {
+    "message": "Stuurt gestructureerde data (zoals JSON of YAML) van de huidige pagina naar Formatomat."
+  },
+  "send_to_formatomat": {
+    "message": "Naar Formatomat sturen"
+  },
+  "opt_title": {
+    "message": "Formatomat – Doel-URL"
+  },
+  "opt_subtitle": {
+    "message": "Waar de geselecteerde of gedetecteerde code naartoe gaat."
+  },
+  "opt_label_url": {
+    "message": "Doel-URL"
+  },
+  "opt_save": {
+    "message": "Opslaan"
+  },
+  "opt_reset": {
+    "message": "Standaard herstellen"
+  },
+  "opt_saved": {
+    "message": "Opgeslagen."
+  },
+  "opt_reset_done": {
+    "message": "Standaard hersteld."
+  },
+  "opt_invalid_url": {
+    "message": "Voer een volledige http(s)-URL in."
+  },
+  "opt_hint": {
+    "message": "Voor lokaal testen bijv. http://localhost:5173/ of http://127.0.0.1:8000/ invoeren — deze hosts zijn al toegestaan. Een andere dev-host moet ook in manifest.json onder host_permissions en content_scripts.matches worden toegevoegd. Leeg veld = standaard (https://formatomat.net/)."
+  }
+}

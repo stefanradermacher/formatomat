@@ -2,6 +2,9 @@
   "name": "formatomat",
   "private": true,
   "type": "module",
+  "scripts": {
+    "build:ext": "node extension/scripts/build.mjs"
+  },
   "devDependencies": {
     "@codemirror/commands": "^6.8.0",
     "@codemirror/lang-json": "^6.0.1",
