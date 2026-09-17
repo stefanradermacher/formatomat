@@ -123,6 +123,30 @@ export function applyLocale(DOM, config, helpers = {}) {
             p.textContent = text;
             DOM.aboutModalBody.appendChild(p);
         });
+        if (ui.aboutMoreProjects) {
+            const parts = ui.aboutMoreProjects.split("{link}");
+            const p = document.createElement("p");
+            p.className = "about-more-projects";
+            const markDark = document.createElement("img");
+            markDark.src = "assets/img/logo-monogram-light.png";
+            markDark.alt = "";
+            markDark.setAttribute("aria-hidden", "true");
+            markDark.className = "about-monogram about-monogram-dark";
+            p.appendChild(markDark);
+            const markLight = document.createElement("img");
+            markLight.src = "assets/img/logo-monogram.png";
+            markLight.alt = "";
+            markLight.setAttribute("aria-hidden", "true");
+            markLight.className = "about-monogram about-monogram-light";
+            p.appendChild(markLight);
+            p.appendChild(document.createTextNode(parts[0] || ""));
+            const a = document.createElement("a");
+            a.href = "https://stefanradermacher.com/projects";
+            a.textContent = ui.aboutMoreProjectsLink || "stefanradermacher.com/projects";
+            p.appendChild(a);
+            p.appendChild(document.createTextNode(parts[1] || ""));
+            DOM.aboutModalBody.appendChild(p);
+        }
         const deps = document.createElement("div");
         deps.className = "modal-deps";
         const depsLabel = document.createElement("p");

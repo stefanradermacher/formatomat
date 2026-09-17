@@ -941,6 +941,10 @@ button, select, input, textarea {
     overflow-y: auto;
 }
 
+#aboutModal .modal-dialog {
+    max-width: 620px;
+}
+
 .modal-dialog h2 {
     font-family: var(--font-display), monospace;
     font-size: 1.6rem;
@@ -969,6 +973,50 @@ button, select, input, textarea {
 .modal-dialog a:hover {
     color: var(--highlight);
     border-bottom-style: solid;
+}
+
+.about-more-projects {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.about-monogram {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+
+/* Show the right monogram variant per theme (mirrors stefanradermacher.com/projects) */
+.about-monogram-light { display: none; }
+.about-monogram-dark  { display: block; }
+@media (prefers-color-scheme: light) {
+    .about-monogram-light { display: block; }
+    .about-monogram-dark  { display: none; }
+}
+:root[data-theme="brass"] .about-monogram-light,
+:root[data-theme="pewter"] .about-monogram-light,
+:root[data-theme="steel"] .about-monogram-light,
+:root[data-theme="chrome"] .about-monogram-light {
+    display: block;
+}
+:root[data-theme="brass"] .about-monogram-dark,
+:root[data-theme="pewter"] .about-monogram-dark,
+:root[data-theme="steel"] .about-monogram-dark,
+:root[data-theme="chrome"] .about-monogram-dark {
+    display: none;
+}
+:root[data-theme="copper"] .about-monogram-light,
+:root[data-theme="iron"] .about-monogram-light,
+:root[data-theme="titanium"] .about-monogram-light {
+    display: none;
+}
+:root[data-theme="copper"] .about-monogram-dark,
+:root[data-theme="iron"] .about-monogram-dark,
+:root[data-theme="titanium"] .about-monogram-dark {
+    display: block;
 }
 
 .modal-deps {

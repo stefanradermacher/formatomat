@@ -83,6 +83,8 @@ export default {
         aboutP1:           "Formatomat は、構造化データを変換・整形・圧縮するための高速でプライバシーに配慮したツールです。すべての処理はブラウザ内でローカルに行われます — データがデバイス外に出ることはありません。",
         aboutP2:           "対応フォーマット：JSON、YAML、XML、TOML、INI および PHP。",
         aboutP3:           "オープンソース、MITライセンス。",
+        aboutMoreProjects: "その他のツール：{link}",
+        aboutMoreProjectsLink: "stefanradermacher.com/projects",
         aboutDepsLabel:    "使用しているオープンソースコンポーネント：",
 
         privacyTitle:      "プライバシーとデータの利用",

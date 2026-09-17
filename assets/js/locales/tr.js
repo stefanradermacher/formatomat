@@ -83,6 +83,8 @@ export default {
         aboutP1:           "Formatomat, yapılandırılmış verileri dönüştürmek, biçimlendirmek ve sıkıştırmak için hızlı ve gizliliğe saygılı bir araçtır. Tüm işlemler tarayıcınızda yerel olarak gerçekleşir — verileriniz cihazınızı terk etmez.",
         aboutP2:           "Desteklenen formatlar: JSON, YAML, XML, TOML, INI ve PHP.",
         aboutP3:           "Açık kaynak, MIT lisansı.",
+        aboutMoreProjects: "Benden diğer araçlar: {link}",
+        aboutMoreProjectsLink: "stefanradermacher.com/projects",
         aboutDepsLabel:    "Kullanılan açık kaynak bileşenler:",
 
         privacyTitle:      "Gizlilik ve Veri Kullanımı",

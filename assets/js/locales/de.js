@@ -82,6 +82,8 @@ export default {
         aboutP1:           "Der Formatomat ist ein schnelles, datenschutzfreundliches Werkzeug zum Konvertieren, Schönformatieren und Verkleinern strukturierter Datenformate. Alle Verarbeitung findet lokal in deinem Browser statt — deine Daten verlassen dein Gerät nicht.",
         aboutP2:           "Unterstützte Formate: JSON, YAML, XML, TOML, INI und PHP.",
         aboutP3:           "Open Source, MIT-lizenziert.",
+        aboutMoreProjects: "Weitere Werkzeuge von mir: {link}",
+        aboutMoreProjectsLink: "stefanradermacher.com/projects",
         aboutDepsLabel:    "Verwendete Open-Source-Komponenten:",
 
         privacyTitle:      "Datenschutz & Datennutzung",

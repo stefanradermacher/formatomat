@@ -83,6 +83,8 @@ export default {
         aboutP1:           "Formatomat 是一款快速、注重隐私的工具，用于转换、美化和压缩结构化数据。所有处理均在您的浏览器本地进行 — 您的数据永远不会离开您的设备。",
         aboutP2:           "支持的格式：JSON、YAML、XML、TOML、INI 和 PHP。",
         aboutP3:           "开源，MIT许可证。",
+        aboutMoreProjects: "更多我的工具：{link}",
+        aboutMoreProjectsLink: "stefanradermacher.com/projects",
         aboutDepsLabel:    "所使用的开源组件：",
 
         privacyTitle:      "隐私与数据使用",

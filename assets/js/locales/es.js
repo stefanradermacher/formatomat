@@ -83,6 +83,8 @@ export default {
         aboutP1:           "Formatomat es una herramienta rápida y respetuosa con la privacidad para convertir, formatear y compactar datos estructurados. Todo el procesamiento se realiza localmente en tu navegador — tus datos nunca abandonan tu dispositivo.",
         aboutP2:           "Formatos compatibles: JSON, YAML, XML, TOML, INI y PHP.",
         aboutP3:           "Código abierto, licencia MIT.",
+        aboutMoreProjects: "Más herramientas mías: {link}",
+        aboutMoreProjectsLink: "stefanradermacher.com/projects",
         aboutDepsLabel:    "Componentes de código abierto utilizados:",
 
         privacyTitle:      "Privacidad y uso de datos",

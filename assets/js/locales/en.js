@@ -83,6 +83,8 @@ export default {
         aboutP1:           "Formatomat is a fast, privacy-friendly tool for converting, pretty-printing and minifying structured data formats. All processing happens locally in your browser — your data never leaves your device.",
         aboutP2:           "Supported formats: JSON, YAML, XML, TOML, INI and PHP. More formats are planned.",
         aboutP3:           "Open source, MIT-licensed.",
+        aboutMoreProjects: "More tools by me: {link}",
+        aboutMoreProjectsLink: "stefanradermacher.com/projects",
         aboutDepsLabel:    "Open source components used:",
 
         privacyTitle:      "Privacy & Data Use",
