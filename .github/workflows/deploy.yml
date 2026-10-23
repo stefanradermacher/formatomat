@@ -20,6 +20,9 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
           echo "${{ secrets.DEPLOY_KNOWN_HOSTS }}" > ~/.ssh/known_hosts
 
+      - name: Cache-Version des Service Workers setzen
+        run: sed -i "s/^const VERSION = .*/const VERSION = \"${GITHUB_SHA::8}\";/" sw.js
+
       - name: Nach mythor synchronisieren
         run: |
           rsync -rltz --delete --itemize-changes --chmod=D2775,F664 \
