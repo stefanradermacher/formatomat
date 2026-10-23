@@ -14,18 +14,21 @@ export default {
     detect(text) {
         const t = text.trim();
         if (t.startsWith("{") || t.startsWith("<")) return false;
-        // INI-specific signal: semicolon comments (TOML only uses #)
-        const hasSemicolon = /^\s*;/m.test(t);
         const hasKeyValue = /^[A-Za-z_]\w*\s*[=:]/m.test(t);
-        // Reject TOML-specific syntax: double-bracket sections, typed values
+        // Reject TOML-specific syntax: double-bracket sections, typed values.
+        // A plain, uncommented "key=value" list without any of those signals
+        // is ambiguous with TOML; toml.js's own detect() already rejects it
+        // (bare unquoted strings are invalid TOML), so by the time we get
+        // here it's safe to just claim it.
         const hasTomlSpecific = /^\s*\[\[/m.test(t) || /=\s*["'\[{]/.test(t);
-        return hasSemicolon && hasKeyValue && !hasTomlSpecific;
+        return hasKeyValue && !hasTomlSpecific;
     },
 
     parse(text) {
         const result = {};
         let section = null;
         const lines = text.split("\n");
+        const errors = [];
         for (let i = 0; i < lines.length; i++) {
             const raw = lines[i].trim();
             if (raw === "" || raw.startsWith(";") || raw.startsWith("#")) continue;
@@ -44,7 +47,14 @@ export default {
             let sepIdx = -1;
             if (eqIdx !== -1 && (colonIdx === -1 || eqIdx <= colonIdx)) sepIdx = eqIdx;
             else if (colonIdx !== -1) sepIdx = colonIdx;
-            if (sepIdx === -1) continue;
+            if (sepIdx === -1) {
+                errors.push({
+                    message: `Expected "key = value" or a [section] header, got: "${raw}"`,
+                    line: i + 1,
+                    column: 1,
+                });
+                continue;
+            }
 
             const key = raw.slice(0, sepIdx).trim();
             const rawVal = raw.slice(sepIdx + 1).trim();
@@ -55,6 +65,14 @@ export default {
             } else {
                 result[section][key] = val;
             }
+        }
+        if (errors.length > 0) {
+            const err = new Error(errors[0].message);
+            err.name = "ParseError";
+            err.line = errors[0].line;
+            err.column = errors[0].column;
+            err.errors = errors;
+            throw err;
         }
         return result;
     },

@@ -16,7 +16,25 @@ export default {
     detect(text) {
         const t = text.trim();
         // TOML files typically start with a comment, a [section], or a key = value pair
-        return /^(\s*#|\s*\[|[a-zA-Z_"'])/.test(t) && t.includes("=") && !t.startsWith("{") && !t.startsWith("<");
+        if (!/^(\s*#|\s*\[|[a-zA-Z_"'])/.test(t) || t.startsWith("{") || t.startsWith("<")) return false;
+
+        let hasAssignment = false;
+        for (const line of t.split("\n")) {
+            const trimmed = line.trim();
+            if (trimmed === "" || trimmed.startsWith("#") || /^\[.+\]$/.test(trimmed)) continue;
+
+            const eq = trimmed.indexOf("=");
+            // A line that's neither blank, a comment, a [section]/[[table]]
+            // header, nor an assignment isn't valid TOML at all.
+            if (eq === -1) return false;
+            const value = trimmed.slice(eq + 1).trim();
+            // Bare, unquoted string values (e.g. `host = localhost`) are invalid
+            // TOML — the spec requires strings to be quoted. Seeing one is a
+            // strong signal this is actually INI, which allows them everywhere.
+            if (!/^("""|'''|["'\[{]|true\b|false\b|[+-]?\d)/.test(value)) return false;
+            hasAssignment = true;
+        }
+        return hasAssignment;
     },
 
     parse(text) {
